@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Grape+Nuts&display=swap');
+
+header, footer{
+    background-color: rgba(208, 141, 124, 0.69);
+}
+
+main{
+    min-height: 50vh;
+}
+.btn-primary{
+    background-color: rgba(208, 141, 124, 0.69);
+    color: black;
+    border: none;
+    margin-top: 10px;
+}
+
+.background_theme{
+    background-color: rgba(208, 141, 124, 0.69);
+}
