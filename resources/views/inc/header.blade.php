@@ -2,11 +2,11 @@
 @section('header')
     <header class="p-3 text-white">
         <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="{{route('home')}}" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none me-5">
+            <div class="d-flex flex-wrap justify-content-center">
+                <a href="{{route('home')}}" class="text-dark text-decoration-none me-5">
                     <div class="col">
                         <div class="row">
-                            <img src={{asset("/images/logotype.svg")}} alt="logo" class="bi me-2" height="40" width="32">
+                           <div><img src='{{asset("/images/logotype.svg")}}' alt="logo" height="40" width="32"></div>
                         </div>
                         <div class="row" style="font-family: Alex Brush; font-size: 1.3em; font-weight: bold">
                             MaisonMathilde
@@ -14,7 +14,7 @@
                     </div>
                 </a>
 
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 align-items-center">
                     <li><a href="{{route('home')}}" class="nav-link px-2 text-dark">@lang('header.home')</a></li>
                     <li><a href="{{route('creations-add')}}" class="nav-link px-2 text-dark">@lang('header.shop')</a></li>
                     <li><a href="{{route('about')}}" class="nav-link px-2 text-dark">@lang('header.about_me')</a></li>
@@ -51,7 +51,7 @@
                     @endif
                 </ul>
 
-                <div class="text-end">
+                <div class="text-end d-flex align-items-center">
                     @if(Illuminate\Support\Facades\Auth::user())
                     <a href="{{route('logout')}}"><button type="button" class="btn btn-outline-dark me-2">Logout</button></a>
                     @endif

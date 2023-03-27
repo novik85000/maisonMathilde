@@ -8,6 +8,20 @@ use App\Models\Contact;
 
 class ContactController extends Controller
 {
+
+    /* 
+    public function showForm($id){
+        $contact = new Contact;
+        $data = $contact-> find($id);
+        $data-> isRead = true;
+        $data-> save();
+
+        return view('one-message', ['data'=> $data]);
+    }
+
+    */
+
+
     public function submit(ContactRequest $request){
         $contact = new Contact();
         $contact-> first_name = $request -> input('first_name');

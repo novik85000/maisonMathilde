@@ -5,22 +5,46 @@
 
 <form action="{{route('contacts-form')}}" method="post" style="width: 30vw; min-width: 500px">
     @csrf
+
+    @if(Auth::user())
+
     <div class="col">
         <div class="row">
-            <label for="first_name" class="form-label">@lang('contacts.first_name')</label>
-            <input type="text" class="form-control" name="first_name" required maxlength="30">
+            <label for="first_name" class="form-label"> @lang('contacts.first_name')</label>
+            <input type="text" class="form-control" name="first_name" value="{{Auth::user()->first_name}}" readonly>
         </div>
 
         <div class="row">
             <label for="last_name" class="form-label">@lang('contacts.last_name')</label>
-            <input type="text" class="form-control"  name="last_name" required maxlength="50">
+            <input type="text" class="form-control"  name="last_name" value="{{Auth::user()->last_name}}" readonly>
         </div>
 
 
         <div class="row">
             <label for="email" class="form-label">@lang('contacts.email')</span></label>
-            <input type="email" name="email" class="form-control" placeholder="you@example.com" maxlength="50">
+            <input type="email" name="email" class="form-control" value="{{Auth::user()->email}}" readonly>
         </div>
+
+    @else
+    
+        <div class="col">
+            <div class="row">
+                <label for="first_name" class="form-label">@lang('contacts.first_name')</label>
+                <input type="text" class="form-control" name="first_name" required maxlength="30">
+            </div>
+
+            <div class="row">
+                <label for="last_name" class="form-label">@lang('contacts.last_name')</label>
+                <input type="text" class="form-control"  name="last_name" required maxlength="50">
+            </div>
+
+
+            <div class="row">
+                <label for="email" class="form-label">@lang('contacts.email')</span></label>
+                <input type="email" name="email" class="form-control" placeholder="you@example.com" maxlength="50">
+            </div>
+
+    @endif
 
         <div class="row">
             <label for="subject" class="form-label">@lang('contacts.subject') </label>

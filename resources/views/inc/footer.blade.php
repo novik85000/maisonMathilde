@@ -1,5 +1,5 @@
 @section('footer')
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <footer class="d-flex flex-wrap align-items-center py-3 border-top">
         <div class="container">
             <div class="row">
                 <div class="col-4 d-flex align-items-center">
